@@ -1,0 +1,40 @@
+<html>
+    <body>
+        <h1>
+            맛집 등록 데이터 출력
+        </h1>
+        <p>
+        Restaurant name is {{ data.name }}<br>
+        Location is {{data.location}}<br>
+        To contact the restaurant, call {{data.phone}}<br>
+        Food Category: {{data.category}}<br>
+        OPENDAYS: {{data.monToSun}}<br>
+        OPENTIME: {{data.open}} ~ {{data.close}}<br>
+        </p>
+        <p>
+        Parking is
+        {% if data['park'] == "available" %}
+        available
+        {% endif %}
+        {% if data['park'] == NULL %}
+        NOT available
+        {% endif %}
+
+        </p>
+        
+        <p>
+        Reservation is
+        {% if data['reserve'] == "available" %}
+        available
+        {% endif %}
+        {% if data['reserve'] == NULL %}
+        NOT available
+        {% endif %}
+
+        </p>
+        
+        <img src="{{url_for('static', filename='image/'+image_file)}}" alt="restaurantPhoto" width="30%">
+    </body>
+    
+    
+</html>
